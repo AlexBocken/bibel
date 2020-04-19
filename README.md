@@ -1,6 +1,6 @@
 # bibel
 
-This is the Einheitsübersetzung from 1980 with the annotations removed. An implementation to allow for annotions might be useful in the future.
+This is the Einheitsübersetzung from 1980 without annotations. An implementation to allow for annotations might be useful in the future.
 
 Still in developement, books will be added from time to time.
 
