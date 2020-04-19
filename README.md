@@ -1,12 +1,12 @@
 # bibel
 
+This is the Einheitsübersetzung from 1980 with the annotations removed. An implementation to allow for annotions might be useful in the future.
+
 Still in developement, books will be added from time to time.
 
 Read the Word of God from your terminal
 
-Code largely based off of [https://github.com/LukeSmithxyz/kjv.git](https://github.com/LukeSmithxyz/kjv.git)
-with a german bible used for text.
-Forked from [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git) but with the Apocrypha added.
+Code largely based off of [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git) but of course in german.
 
 
 ## Usage
