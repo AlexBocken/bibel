@@ -2,8 +2,6 @@
 
 This is the Einheitsübersetzung from 1980 without annotations. An implementation to allow for annotations might be useful in the future.
 
-Still in developement, books will be added from time to time.
-
 Read the Word of God from your terminal
 
 Code largely based off of [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git) but of course in german.
