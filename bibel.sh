@@ -62,7 +62,7 @@ while [ $# -gt 0 ]; do
 		get_data bibel.tsv | awk -v cmd=list "$(get_data bibel.awk)"
 		exit
 	elif [ "$1" = "-W" ]; then
-		export KJV_NOLINEWRAP=1
+		export BIBEL_NOLINEWRAP=1
 		shift
 	elif [ "$1" = "-h" ] || [ "$isFlag" -eq 1 ]; then
 		show_help
@@ -73,7 +73,7 @@ done
 
 cols=$(tput cols 2>/dev/null)
 if [ $? -eq 0 ]; then
-	export KJV_MAX_WIDTH="$cols"
+	export BIBEL_MAX_WIDTH="$cols"
 fi
 
 if [ $# -eq 0 ]; then
