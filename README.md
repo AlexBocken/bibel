@@ -11,6 +11,7 @@ Code largely based off of [https://github.com/bontibon/kjv.git](https://github.c
 
 ## Usage
 
+```
     usage: ./bibel [flags] [reference...]
 
       -l      list books
@@ -37,15 +38,17 @@ Code largely based off of [https://github.com/bontibon/kjv.git](https://github.c
               All verses in a book that match a pattern
           <Book>:<Chapter>/<Search>
               All verses in a chapter of a book that match a pattern
+```
 
 ## Build
 
 bibel can be built by cloning the repository and then running make:
 
+```bash
     git clone https://github.com/AlexBocken/bibel.git
     cd bibel
     sudo make install
-
+```
 ## License
 
 Public domain
