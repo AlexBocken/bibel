@@ -172,15 +172,41 @@ function printverse(verse,    word_count, characters_printed) {
 	printf("\n")
 }
 
+function printintroductionpar(verse,    word_count, characters_printed) {
+	if (ENVIRON["BIBEL_NOLINEWRAP"] != "" && ENVIRON["BIBEL_NOLINEWRAP"] != "0") {
+		printf("%s\n", verse)
+		return
+	}
+
+	word_count = split(verse, words, " ")
+	for (i = 1; i <= word_count; i++) {
+		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH - 8) {
+			printf("\n")
+			characters_printed = 0
+		}
+		if (characters_printed > 0) {
+			printf(" ")
+			characters_printed++
+		}
+		printf("%s", words[i])
+		characters_printed += length(words[i])
+	}
+	printf("\n")
+}
+
 function processline() {
 	if (last_book_printed != $2) {
 		print $1
 		last_book_printed = $2
 	}
-	if ($4 != 0){
+	if ($4 == 0){
+		printf("\t")
+		printintroductionpar($6)
+		}
+	else {
 		printf("%d:%d\t", $4, $5)
-	}
-	printverse($6)
+		printverse($6)
+		}
 	outputted_records++
 }
 
