@@ -7,7 +7,7 @@ BEGIN {
 	#  $6 Verse
 	FS = "\t"
 
-	MAX_WIDTH = 80
+	MAX_WIDTH = 100
 	if (ENVIRON["BIBEL_MAX_WIDTH"] ~ /^[0-9]+$/) {
 		if (int(ENVIRON["BIBEL_MAX_WIDTH"]) < MAX_WIDTH) {
 			MAX_WIDTH = int(ENVIRON["BIBEL_MAX_WIDTH"])
@@ -201,7 +201,7 @@ function printannotation(annotation,    word_count, characters_printed) {
 		return
 	}
 
-	if( length(annotation) < MAX_WIDTH - 1){
+	if( length(annotation) < MAX_WIDTH - 17){
 			for ( i=0; i <= MAX_WIDTH - length(annotation) - 1; i++){
 				printf(" ")
 			}
@@ -210,7 +210,7 @@ function printannotation(annotation,    word_count, characters_printed) {
 	else{
 	word_count = split(annotation, words, " ")
 	printf("\n\t\t*")
-	characters_printed=17 #account for indents at beginning of each multiline annotation
+	characters_printed=17 #account for indents at beginning of each multiline annotation (2 tabs + "*")
 	for (i = 1; i <= word_count; i++) {
 		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH) {
 			printf("\n")
