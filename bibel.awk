@@ -179,17 +179,51 @@ function printintroductionpar(verse,    word_count, characters_printed) {
 	}
 
 	word_count = split(verse, words, " ")
+	characters_printed=8 #account for indents at beginning of each verse
 	for (i = 1; i <= word_count; i++) {
-		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH - 8) {
+		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH) {
 			printf("\n")
 			characters_printed = 0
 		}
-		if (characters_printed > 0) {
+		if (i != 1 && characters_printed > 0) { #need first check because we set characters_printed > 0 for first line only
 			printf(" ")
 			characters_printed++
 		}
 		printf("%s", words[i])
 		characters_printed += length(words[i])
+	}
+	printf("\n")
+}
+
+function printannotation(annotation,    word_count, characters_printed) {
+	if (ENVIRON["BIBEL_NOLINEWRAP"] != "" && ENVIRON["BIBEL_NOLINEWRAP"] != "0") {
+		printf("\t\t%s\n", annotation)
+		return
+	}
+
+	if( length(annotation) < MAX_WIDTH - 1){
+			for ( i=0; i <= MAX_WIDTH - length(annotation) - 1; i++){
+				printf(" ")
+			}
+			printf("*%s", annotation)
+		}
+	else{
+	word_count = split(annotation, words, " ")
+	printf("\n\t\t*")
+	characters_printed=17 #account for indents at beginning of each multiline annotation
+	for (i = 1; i <= word_count; i++) {
+		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH) {
+			printf("\n")
+			characters_printed = 0
+		}
+		if (i != 1 && characters_printed > 0) { #Do not print empty space in front of first word for the first line (since characters_printed gets initialized > 0 we need this
+			printf(" ")
+			characters_printed++
+		}
+		printf("%s", words[i])
+		characters_printed += length(words[i])
+	}
+	printf("\n")
 	}
 	printf("\n")
 }
@@ -200,10 +234,9 @@ function processline() {
 		last_book_printed = $2
 	}
 	if ($5 == "*") {
-		for ( i=0; i <= MAX_WIDTH - length($6) - 1; i++){
-			printf(" ")
+		printannotation($6)
 		}
-		printf("*%s\n", $6)}
+
 	else if ($4 == 0){
 		printf("\t")
 		printintroductionpar($6)
