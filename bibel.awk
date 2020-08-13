@@ -199,7 +199,12 @@ function processline() {
 		print $1
 		last_book_printed = $2
 	}
-	if ($4 == 0){
+	if ($5 == "*") {
+		for ( i=0; i <= MAX_WIDTH - length($6) - 1; i++){
+			printf(" ")
+		}
+		printf("*%s\n", $6)}
+	else if ($4 == 0){
 		printf("\t")
 		printintroductionpar($6)
 		}
