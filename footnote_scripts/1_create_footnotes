@@ -1,7 +1,19 @@
 #!/bin/zsh
 #first script used to create a file with nicer formatting, here just for Genesis
-for chapter in {0..50}; do
-	for i in {0..50}; do
-		cat Gen_$chapter.html | grep "fnm$i" | tr '\n' '@' |  perl -pe "s/<div class=\"v\" id=\"v([0-9]{1,2}).*?<\/span> (.*?)<\/div>/Genesis\tGen\t1\t$chapter\t\1\t\2\*/g" | perl -pe "s/<sup class=\"fnm\".*?<\/sup>//g" | perl -pe "s/<div class=\"fn\"><sup class=\"fnt\">.*?<\/sup> (.*?)<\/div>/\1/" | tr '@' '\n'
+awk 'BEGIN{FS="\t"} {print $1}' books > tmp_book_files
+while read book_file
+do
+	book_short="$(grep $book_file books | awk 'BEGIN{FS="\t"} {print $3}')"
+	long_book="$(grep $book_file books | awk 'BEGIN{FS="\t"} {print $2}')"
+	book_no="$(grep $book_file books | awk 'BEGIN{FS="\t"} {print $4}')"
+	chapters=$( ls all_books/$book_file* | wc -l )
+	for chapter in {1..$chapters}
+	do
+		for i in {1..100}
+		do
+			cat all_books/"$book_file"_$chapter.html | grep "fnm$i" | tr '\n' '@' |  perl -pe "s/<div class=\"v\" id=\"v([0-9]{1,2}).*?<\/span> (.*?)<\/div>/$long_book\t$book_short\t$book_no\t$chapter\t\1\t*/g" | perl -pe "s/<sup class=\"fnm\".*?<\/sup>//g" | perl -pe "s/<div class=\"fn\"><sup class=\"fnt\">.*?<\/sup> (.*?)<\/div>/\1/" | tr '@' '\n'
+		done
 	done
-done
+done < tmp_book_files
+#format of books: file book_short book_long book_no
+#Still leaves some html formatting in there for some reason, needs additional stripping
