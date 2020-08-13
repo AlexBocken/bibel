@@ -1,0 +1,7 @@
+#!/bin/zsh
+#first script used to create a file with nicer formatting, here just for Genesis
+for chapter in {0..50}; do
+	for i in {0..50}; do
+		cat Gen_$chapter.html | grep "fnm$i" | tr '\n' '@' |  perl -pe "s/<div class=\"v\" id=\"v([0-9]{1,2}).*?<\/span> (.*?)<\/div>/Genesis\tGen\t1\t$chapter\t\1\t\2\*/g" | perl -pe "s/<sup class=\"fnm\".*?<\/sup>//g" | perl -pe "s/<div class=\"fn\"><sup class=\"fnt\">.*?<\/sup> (.*?)<\/div>/\1/" | tr '@' '\n'
+	done
+done

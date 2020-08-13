@@ -1,0 +1,16 @@
+#!/bin/zsh
+#Adds the footnotes in the right location in the larger tsv file
+while read line; do
+	start_of_line="$(echo "$line" | awk 'BEGIN{FS="\t"}{printf("%s\t%s\t%d\t%d\t%d\t\n",$1,$2,$3,$4,$5)}')"
+	if grep -q "$start_of_line" notes_formatted; then
+		count=$( grep "$start_of_line" notes_formatted | wc -l )
+		printf '%s' "$line"
+		for i in {1..$count}; do
+			printf '*'
+		done
+		printf '\n'
+		grep "$start_of_line" notes_formatted
+	else
+		echo "$line"
+	fi
+done<Genesis_from_tsv
