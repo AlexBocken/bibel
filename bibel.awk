@@ -233,8 +233,8 @@ function processline() {
 		print $1
 		last_book_printed = $2
 	}
-	if ($5 == "*") {
-		printannotation($6)
+	if ($6 == "*") {
+		printannotation($7)
 		}
 
 	else if ($4 == 0){
