@@ -196,26 +196,26 @@ function printintroductionpar(verse,    word_count, characters_printed) {
 	printed_intrudction=1
 }
 
-function printannotation(annotation,    word_count, characters_printed) {
+function printfootnote(footnote,    word_count, characters_printed) {
 	if ( ENVIRON["BIBEL_NOFOOTNOTES"] != "" && ENVIRON["BIBEL_NOFOOTNOTES"] != "0"){
 		return
 	}
 	else{
 	if (ENVIRON["BIBEL_NOLINEWRAP"] != "" && ENVIRON["BIBEL_NOLINEWRAP"] != "0") {
-		printf("\t\t%s\n", annotation)
+		printf("\t\t%s\n", footnote)
 		return
 	}
 
-	if( length(annotation) < MAX_WIDTH - 17){
-			for ( i=0; i <= MAX_WIDTH - length(annotation) - 1; i++){
+	if( length(footnote) < MAX_WIDTH - 17){
+			for ( i=1; i <= MAX_WIDTH - length(footnote) - 1; i++){
 				printf(" ")
 			}
-			printf("*%s", annotation)
+			printf("*%s", footnote)
 		}
 	else{
-	word_count = split(annotation, words, " ")
+	word_count = split(footnote, words, " ")
 	printf("\n\t\t*")
-	characters_printed=17 #account for indents at beginning of each multiline annotation (2 tabs + "*")
+	characters_printed=17 #account for indents at beginning of each multiline footnote (2 tabs + "*")
 	for (i = 1; i <= word_count; i++) {
 		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH) {
 			printf("\n")
@@ -244,7 +244,7 @@ function processline() {
 		last_book_printed = $2
 	}
 	if ($6 == "*") {
-		printannotation($7)
+		printfootnote($7)
 		}
 
 	else if ($4 == 0){
