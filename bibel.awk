@@ -193,6 +193,7 @@ function printintroductionpar(verse,    word_count, characters_printed) {
 		characters_printed += length(words[i])
 	}
 	printf("\n")
+	printed_intrudction=1
 }
 
 function printannotation(annotation,    word_count, characters_printed) {
@@ -229,6 +230,10 @@ function printannotation(annotation,    word_count, characters_printed) {
 }
 
 function processline() {
+	if (printed_intrudction && $4 != 0){
+		printf("\n\n")
+		printed_intrudction=0
+	}
 	if (last_book_printed != $2) {
 		print $1
 		last_book_printed = $2
