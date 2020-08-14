@@ -15,6 +15,7 @@ Code largely based off of [https://github.com/bontibon/kjv.git](https://github.c
       -l      list books
       -W      no line wrap
       -h      show help
+      -F      no footnotes
 
       Reference types:
           <Book>

@@ -23,6 +23,7 @@ show_help() {
 	echo "  -l      list books"
 	echo "  -W      no line wrap"
 	echo "  -h      show help"
+	echo "  -F      no footnotes"
 	echo
 	echo "  Reference types:"
 	echo "      <Book>"
@@ -63,6 +64,9 @@ while [ $# -gt 0 ]; do
 		exit
 	elif [ "$1" = "-W" ]; then
 		export BIBEL_NOLINEWRAP=1
+		shift
+	elif [ "$1" = "-F" ]; then
+		export BIBEL_NOFOOTNOTES=1
 		shift
 	elif [ "$1" = "-h" ] || [ "$isFlag" -eq 1 ]; then
 		show_help

@@ -197,6 +197,10 @@ function printintroductionpar(verse,    word_count, characters_printed) {
 }
 
 function printannotation(annotation,    word_count, characters_printed) {
+	if ( ENVIRON["BIBEL_NOFOOTNOTES"] != "" && ENVIRON["BIBEL_NOFOOTNOTES"] != "0"){
+		return
+	}
+	else{
 	if (ENVIRON["BIBEL_NOLINEWRAP"] != "" && ENVIRON["BIBEL_NOLINEWRAP"] != "0") {
 		printf("\t\t%s\n", annotation)
 		return
@@ -227,6 +231,7 @@ function printannotation(annotation,    word_count, characters_printed) {
 	printf("\n")
 	}
 	printf("\n")
+	}
 }
 
 function processline() {
