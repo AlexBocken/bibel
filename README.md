@@ -2,7 +2,7 @@
 
 Read the Word of God from your terminal
 
-This is the Einheitsübersetzung from 1980 without annotations. An implementation to allow for annotations might be useful in the future.
+This is the Einheitsübersetzung from 1980. Footnotes are included and are always listed immediately after the verse.
 
 Code largely based off of [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git). Luke Smith ([lukesmith.xyz](https://lukesmith.xyz/)) brought my attention to this software via a video of his.
 
