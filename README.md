@@ -6,7 +6,6 @@ This is the Einheitsübersetzung from 1980. Footnotes are included and are alway
 
 Code largely based off of [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git). Luke Smith ([lukesmith.xyz](https://lukesmith.xyz/)) brought my attention to this software via a video of his.
 
-<img src="/../assets/Mt_example.png" alt="Beginning of Matthäus Chapter" width="1800">
 
 ## Usage
 
@@ -49,6 +48,12 @@ bibel can be built by cloning the repository and then running make:
     cd bibel
     sudo make install
 ```
+## Example
+
+Here's for example how the beginning of Matthäus looks. The first part being an introduction tothe chapter and then some verses with footnotes.
+
+<img src="/../assets/Mt_example.png" alt="Beginning of Matthäus Chapter" width="1800">
+
 ## License
 
 Public domain
