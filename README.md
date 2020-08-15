@@ -6,6 +6,7 @@ This is the Einheitsübersetzung from 1980. Footnotes are included and are alway
 
 Code largely based off of [https://github.com/bontibon/kjv.git](https://github.com/bontibon/kjv.git). Luke Smith ([lukesmith.xyz](https://lukesmith.xyz/)) brought my attention to this software via a video of his.
 
+<img src="/../assets/Mt_example.png" alt="Beginning of Matthäus Chapter" width="1800">
 
 ## Usage
 
