@@ -22,8 +22,8 @@ show_help() {
 	echo
 	echo "  -l      list books"
 	echo "  -W      no line wrap"
-	echo "  -h      show help"
 	echo "  -F      no footnotes"
+	echo "  -h      show help"
 	echo
 	echo "  Reference types:"
 	echo "      <Book>"

@@ -14,8 +14,8 @@ Code largely based off of [https://github.com/bontibon/kjv.git](https://github.c
 
       -l      list books
       -W      no line wrap
-      -h      show help
       -F      no footnotes
+      -h      show help
 
       Reference types:
           <Book>
@@ -50,7 +50,7 @@ bibel can be built by cloning the repository and then running make:
 ```
 ## Example
 
-Here's for example how the beginning of Matthäus looks. The first part being an introduction tothe chapter and then some verses with footnotes.
+Here's for example how the beginning of Matthäus looks. The first part being an introduction to the chapter and then some verses with footnotes.
 
 <img src="/../assets/Mt_example.png" alt="Beginning of Matthäus Chapter" width="1800">
 
