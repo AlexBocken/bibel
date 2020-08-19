@@ -217,8 +217,8 @@ function printfootnote(footnote,    word_count, characters_printed) {
 	printf("\n\t\t*")
 	characters_printed=17 #account for indents at beginning of each multiline footnote (2 tabs + "*")
 	for (i = 1; i <= word_count; i++) {
-		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH) {
-			printf("\n")
+		if (characters_printed + length(words[i]) + (characters_printed > 0 ? 1 : 0) > MAX_WIDTH - 8 ) {
+			printf("\n\t")
 			characters_printed = 0
 		}
 		if (i != 1 && characters_printed > 0) { #Do not print empty space in front of first word for the first line (since characters_printed gets initialized > 0 we need this
