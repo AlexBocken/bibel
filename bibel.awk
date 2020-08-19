@@ -51,7 +51,7 @@ function parseref(ref, arr) {
 		return "unknown"
 	}
 
-	if (match(ref, "^:?[1-9]+[0-9]*")) {
+	if (match(ref, "^:?[0-9]+[0-9]*")) {
 		# 2, 3, 3a, 4, 5, 6, 9
 		if (sub("^:", "", ref)) {
 			arr["chapter"] = int(substr(ref, 1, RLENGTH - 1))
@@ -71,11 +71,11 @@ function parseref(ref, arr) {
 		return "unknown"
 	}
 
-	if (match(ref, "^:[1-9]+[0-9]*")) {
+	if (match(ref, "^:[0-9]+[0-9]*")) {
 		# 3, 3a, 5, 6
 		arr["verse"] = int(substr(ref, 2, RLENGTH - 1))
 		ref = substr(ref, RLENGTH + 1)
-	} else if (match(ref, "^-[1-9]+[0-9]*$")) {
+	} else if (match(ref, "^-[0-9]+[0-9]*$")) {
 		# 4
 		arr["chapter_end"] = int(substr(ref, 2))
 		return "range"
@@ -90,25 +90,25 @@ function parseref(ref, arr) {
 		return "unknown"
 	}
 
-	if (match(ref, "^-[1-9]+[0-9]*$")) {
+	if (match(ref, "^-[0-9]+[0-9]*$")) {
 		# 5
 		arr["verse_end"] = int(substr(ref, 2))
 		return "range"
-	} else if (match(ref, "-[1-9]+[0-9]*")) {
+	} else if (match(ref, "-[0-9]+[0-9]*")) {
 		# 6
 		arr["chapter_end"] = int(substr(ref, 2, RLENGTH - 1))
 		ref = substr(ref, RLENGTH + 1)
 	} else if (ref == "") {
 		# 3
 		return "exact"
-	} else if (match(ref, "^,[1-9]+[0-9]*")) {
+	} else if (match(ref, "^,[0-9]+[0-9]*")) {
 		# 3a
 		arr["verse", arr["verse"]] = 1
 		delete arr["verse"]
 		do {
 			arr["verse", substr(ref, 2, RLENGTH - 1)] = 1
 			ref = substr(ref, RLENGTH + 1)
-		} while (match(ref, "^,[1-9]+[0-9]*"))
+		} while (match(ref, "^,[0-9]+[0-9]*"))
 
 		if (ref != "") {
 			return "unknown"
@@ -119,7 +119,7 @@ function parseref(ref, arr) {
 		return "unknown"
 	}
 
-	if (match(ref, "^:[1-9]+[0-9]*$")) {
+	if (match(ref, "^:[0-9]+[0-9]*$")) {
 		# 6
 		arr["verse_end"] = int(substr(ref, 2))
 		return "range_ext"
