@@ -39,7 +39,9 @@ Code largely based off of [https://github.com/bontibon/kjv.git](https://github.c
               All verses in a chapter of a book that match a pattern
 ```
 
-## Build
+## Install
+
+### From Source
 
 bibel can be built by cloning the repository and then running make:
 
@@ -48,6 +50,16 @@ bibel can be built by cloning the repository and then running make:
     cd bibel
     sudo make install
 ```
+
+### AUR
+
+If you're running an arch-based distro you can get bibel from the AUR.
+So for example using yay, it's a simple
+
+```bash
+    yay -S bibel-git
+```
+
 ## Example
 
 Here's for example how the beginning of Matthäus looks. The first part being an introduction to the chapter and then some verses with footnotes.
