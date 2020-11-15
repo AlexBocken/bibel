@@ -114,6 +114,15 @@ zu dem Evangelium der Kirche.
 1:8	Asa von Joschafat, /Joschafat von Joram, /Joram von Usija.
 1:9	Usija war der Vater von Jotam, /Jotam von Ahas, /Ahas von Hiskija,
 ```
+## Similar projects
+
+My work, as already sated, is mostly based on the source code of [Bontibon's kjv](https://github.com/bontibon/kjv).
+Similar projects in different variations can be found:
+
+- Bontibon's original kjv: https://github.com/bontibon/kjv
+- Luke's fork with added Apocrypha: https://github.com/LukeSmithxyz/kjv
+- Luke's latin version: https://github.com/LukeSmithxyz/vul
+- Luke's old greek version: https://github.com/LukeSmithxyz/grb
 
 ## License
 
