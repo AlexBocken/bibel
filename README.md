@@ -53,8 +53,8 @@ bibel can be built by cloning the repository and then running make:
 
 ### AUR
 
-If you're running an arch-based distro you can get bibel from the AUR.
-So for example using yay, it's a simple
+if you're running an arch-based distribution you can get bibel from the AUR.
+so for example using yay, it's a simple
 
 ```bash
     yay -S bibel-git
@@ -62,7 +62,7 @@ So for example using yay, it's a simple
 
 ## Example
 
-Here's for example how the beginning of Matthäus looks. The first part being an introduction to the chapter and then some verses with footnotes.
+Here's for example how the beginning of Matthew looks. The first part being an introduction to the chapter and then some verses with footnotes.
 
 ```
 Matthäus
@@ -116,9 +116,10 @@ zu dem Evangelium der Kirche.
 ```
 ## Similar projects
 
-My work, as already sated, is mostly based on the source code of [Bontibon's kjv](https://github.com/bontibon/kjv).
+My work, as already stated, is mostly based on the source code of [Bontibon's kjv](https://github.com/bontibon/kjv).
 Similar projects in different variations can be found:
 
+- My implementation of 1914 Allioli Vulgata-Translation: https://github.com/AlexBocken/allioli
 - Bontibon's original kjv: https://github.com/bontibon/kjv
 - Luke's fork with added Apocrypha: https://github.com/LukeSmithxyz/kjv
 - Luke's latin version: https://github.com/LukeSmithxyz/vul
